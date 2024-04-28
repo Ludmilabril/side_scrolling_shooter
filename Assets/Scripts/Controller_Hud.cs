@@ -29,7 +29,6 @@ public class Controller_Hud : MonoBehaviour
     {
         if (gameOver)
         {
-            Time.timeScale = 0;
             gameOverText.text = "Game Over" ;
             gameOverText.gameObject.SetActive(true);
         }
