@@ -22,6 +22,7 @@ public class Controller_Player : MonoBehaviour
     internal float shootingCount=0;
     internal bool forceField;
     internal bool laserOn;
+    internal bool Health;
 
     public static bool lastKeyUp;
 
@@ -69,6 +70,7 @@ public class Controller_Player : MonoBehaviour
         missiles = false;
         laserOn = false;
         forceField = false;
+        Health = false;
         options = new List<Controller_Option>();
         vidaEn = GetComponent<Controller_Health>();
     }
@@ -180,10 +182,20 @@ public class Controller_Player : MonoBehaviour
             {
                 OptionListing();
             }
-            else if (powerUpCount >= 6)
+            else if (powerUpCount == 6)
             {
                 forceField = true;
                 powerUpCount = 0;
+            }
+            else if (powerUpCount >= 7)
+            {
+                Health = true;
+                if(vidaEn.vida < 100)
+                {
+                    vidaEn.vida = 100;
+                    powerUpCount = 0;
+                }
+                
             }
         }
     }

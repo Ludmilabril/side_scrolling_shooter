@@ -666,6 +666,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &504150476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504150478}
+  m_Layer: 0
+  m_Name: Controller_Health
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &504150478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504150476}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.6557288, w: 0.75499654}
+  m_LocalPosition: {x: -7.204743, y: 7.9035897, z: -0.08892873}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 689038996}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &689038991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3f8e6878626e8884080aba493c4c2b11,
@@ -775,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4edce82d10e9bf40a1936572654861c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   projectile: {fileID: 8500176173504030484, guid: 5f67b379e305235498b5f90903e446a8,
     type: 3}
   doubleProjectile: {fileID: 8500176173504030484, guid: fb2d17bc93f8b6f49a7c3cb4bf83f34e,
@@ -786,7 +817,7 @@ MonoBehaviour:
     type: 3}
   option: {fileID: 9206306280091525897, guid: a2ccf1076a15c0a4f8f38f568358fada, type: 3}
   powerUpCount: 0
-  "da\xF1o": 20
+  "da\xF1o": 10
 --- !u!4 &689038996 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3f8e6878626e8884080aba493c4c2b11,
@@ -1086,7 +1117,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3f8e6878626e8884080aba493c4c2b11,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.8800006
+      value: 5.880001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f8e6878626e8884080aba493c4c2b11,
         type: 3}
@@ -1195,6 +1226,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 925168400}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3f8e6878626e8884080aba493c4c2b11,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 504150478}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3f8e6878626e8884080aba493c4c2b11,
         type: 3}
