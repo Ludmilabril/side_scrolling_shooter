@@ -35,7 +35,9 @@ public class Controller_Player : MonoBehaviour
     private List<Controller_Option> options;
     
     public static Controller_Player _Player;
-    
+    private Controller_Health vidaEn;
+
+    public int daño = 20;
     private void Awake()
     {
         if (_Player == null)
@@ -68,6 +70,7 @@ public class Controller_Player : MonoBehaviour
         laserOn = false;
         forceField = false;
         options = new List<Controller_Option>();
+        vidaEn = GetComponent<Controller_Health>();
     }
 
     private void Update()
@@ -232,19 +235,22 @@ public class Controller_Player : MonoBehaviour
 
     public virtual void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")|| collision.gameObject.CompareTag("EnemyProjectile"))
+
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyProjectile"))
         {
+            vidaEn.vida -= daño;
+
             if (forceField)
             {
                 Destroy(collision.gameObject);
                 forceField = false;
             }
-            else
-            {
-                gameObject.SetActive(false);
-                //Destroy(this.gameObject);
-                Controller_Hud.gameOver = true;
-            }
+        }
+
+        if (vidaEn.vida <= 0)
+        {
+            gameObject.SetActive(false);
+            Controller_Hud.gameOver = true;
         }
 
         if (collision.gameObject.CompareTag("PowerUp"))
