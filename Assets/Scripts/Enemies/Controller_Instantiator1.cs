@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller_Instantiator : MonoBehaviour
+public class Controller_Instantiator1 : MonoBehaviour
 {
     public float timer = 7;
 
-    public  List<GameObject> enemies;
+    public  GameObject enemy;
 
     public GameObject instantiatePos;
 
@@ -23,11 +23,11 @@ public class Controller_Instantiator : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        SpawnEnemies();
-        ChangeVelocity();
+        SpawnEnemy1();
+        ChangeVelocity1();
     }
 
-    private void ChangeVelocity()
+    private void ChangeVelocity1()
     {
         time += Time.deltaTime;
         if (time > multiplier)
@@ -37,17 +37,16 @@ public class Controller_Instantiator : MonoBehaviour
         }
     }
 
-    private void SpawnEnemies()
+    private void SpawnEnemy1()
     {
         if (timer <= 0)
         {
             float offsetX = instantiatePos.transform.position.x;
-            int rnd = UnityEngine.Random.Range(0, enemies.Count);
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 1; i++)
             {
                 offsetX = offsetX + 4;
                 Vector3 transform = new Vector3(offsetX, instantiatePos.transform.position.y, instantiatePos.transform.position.z);
-                Instantiate(enemies[rnd], transform,Quaternion.identity);
+                Instantiate(enemy, transform,Quaternion.identity);
             }
             timer = 7;
         }

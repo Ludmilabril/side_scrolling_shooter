@@ -67,6 +67,7 @@ public class Controller_Hud : MonoBehaviour
                 powerUpText.text = "PowerUp: +Health";
             }
         }
-        pointsText.text = "Score: " + points.ToString();
+        pointsText.text = points.ToString();
+        
     }
 }
